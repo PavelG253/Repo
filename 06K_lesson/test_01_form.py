@@ -24,8 +24,8 @@ def form_test():
     }
 
     for field_name, value in values_new.items():
-        field = driver.find_element(By.NAME, field_name)
-        field.send_keys(value)
+        field1 = driver.find_element(By.NAME, field_name)
+        field1.send_keys(value)
 
     driver.find_element(By.CLASS_NAME, 'btn-outline-primary').click()
 
@@ -43,9 +43,10 @@ def form_test():
     ]
 
     for field_id in fields_to_check:
-        field = driver.find_element(By.ID, field_id)
-        field_classes = field.get_attribute("class")
+        field2 = driver.find_element(By.ID, field_id)
+        field_classes = field2.get_attribute("class")
         assert "alert-success" in field_classes
 
     driver.quit()
+
 
