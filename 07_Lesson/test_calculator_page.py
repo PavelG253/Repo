@@ -21,3 +21,4 @@ def test_slow_calculator(driver):
 
     result = calculator.get_result()
     assert result == "15", f"Ожидался результат 15, но получено {result}"
+
