@@ -9,17 +9,23 @@ class CheckoutPage:
         self.wait = WebDriverWait(driver, 10)
 
     def enter_first_name(self, first_name):
-        first_name_input = self.driver.find_element(By.ID, "first-name")
+        first_name_input = self.wait.until(
+            EC.element_to_be_clickable((By.ID, "first-name"))
+        )
         first_name_input.send_keys(first_name)
         return self
 
     def enter_last_name(self, last_name):
-        last_name_input = self.driver.find_element(By.ID, "last-name")
+        last_name_input = self.wait.until(
+            EC.element_to_be_clickable((By.ID, "last-name"))
+        )
         last_name_input.send_keys(last_name)
         return self
 
     def enter_postal_code(self, postal_code):
-        postal_code_input = self.driver.find_element(By.ID, "postal-code")
+        postal_code_input = self.wait.until(
+            EC.element_to_be_clickable((By.ID, "postal-code"))
+        )
         postal_code_input.send_keys(postal_code)
         return self
 
