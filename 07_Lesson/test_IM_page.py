@@ -1,11 +1,14 @@
 import pytest
+from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from IM.LoginPage import LoginPage
 
 
 @pytest.fixture
 def driver():
-    driver = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument("--incognito")
+    driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(3)
     yield driver
     driver.quit()
