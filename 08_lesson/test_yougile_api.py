@@ -1,6 +1,6 @@
 from yougile_api import YouGileAPI
 
-API_KEY = "RcX6cuqNkaKlWwBaos5f4KI4pArcarfv3TEHBQRCy7vDDqLnB46JTVZTn76vD-2R"
+API_KEY = "key"
 
 
 def test_positive_create_project():
@@ -61,3 +61,4 @@ def test_negative_update_project_title():
         "Unexisted_id", "Smth new")
 
     assert response.status_code == 404
+
